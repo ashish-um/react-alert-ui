@@ -1,0 +1,21 @@
+.blob {
+  position: absolute;
+  background: radial-gradient(rgb(250 255 53) 10%, rgb(189 113 47));
+  width: 400px;
+  height: 400px;
+  left: 0;
+  /* opacity: 0.5; */
+  z-index: -2;
+  animation: rotate 8s infinite linear;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  50% {
+    height: 300px;
+    width: 240px;
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
