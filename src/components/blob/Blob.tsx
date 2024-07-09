@@ -28,7 +28,6 @@ function Blob() {
     // return;
 
     if (blobRef.current) {
-      console.log(window.scrollY);
       const keyframe = {
         // left: `${event.clientX - blobRef.current.clientWidth / 2}px`,
         top: `${pageY - oldScrollY + window.scrollY}px`,

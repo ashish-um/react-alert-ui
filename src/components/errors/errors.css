@@ -1,0 +1,87 @@
+.error-parent {
+  position: fixed;
+  z-index: 10;
+  bottom: 10px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.parent-center {
+  /* width: 100vw; */
+  left: 0;
+  bottom: 20px;
+  align-items: center;
+}
+
+.basic {
+  /* background: red; */
+  padding: 10px 30px;
+  transition: all 1s;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: basic-show 1s forwards, basic-exit 1s forwards 3s;
+}
+
+.center {
+  animation: scale-show 400ms forwards cubic-bezier(0.39, 1.23, 0.75, 1.42),
+    basic-exit 1s forwards 3s;
+  border-radius: 100vw;
+}
+
+.slide {
+  animation: slide-show 400ms forwards cubic-bezier(0.39, 1.23, 0.75, 1.42),
+    basic-exit 1s forwards 3s;
+  border-radius: 100vw;
+  z-index: 2;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: rgb(216, 60, 60);
+}
+
+.warning {
+  background: rgb(44, 110, 210);
+}
+
+@keyframes slide-show {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-show {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes basic-show {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes basic-exit {
+  to {
+    opacity: 0;
+  }
+}

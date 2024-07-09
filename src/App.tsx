@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
 import Blob from "./components/blob/Blob";
+
+import Basic from "./components/errors/Basic";
+import Center from "./components/errors/Center";
+import Slide from "./components/errors/Slide";
 
 function App() {
   const imgURL =
@@ -7,23 +10,18 @@ function App() {
 
   return (
     <>
-      <center>
-        <h1
-          style={{
-            paddingTop: "30vh",
-            fontSize: "80px",
-            position: "absolute",
-            left: "50%",
-            // transform: "translateX(-50%)",
-            zIndex: 10,
-          }}
-        >
-          Welcome
-        </h1>
-      </center>
+      <div className="content">
+        <h1>Welcome</h1>
+        <p>A Demo of Custom Alert Components</p>
+        <div style={{ display: "flex" }}>
+          <Basic />
+          <Center />
+          <Slide />
+        </div>
+      </div>
       <div className="bg-wrapper">
         <div className="blur">
-          <div className="content">
+          <div>
             <img src={imgURL} />
           </div>
         </div>

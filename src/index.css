@@ -81,27 +81,47 @@ button:focus-visible {
   img {
     position: absolute;
     top: 0;
-    opacity: 0.5;
+    opacity: 0.6;
     object-fit: contain;
     width: 100%;
   }
 }
 
+.content {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* animation: reveal 1.5s forwards 1s; */
+  p {
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
 h1 {
-  opacity: 0;
-  transform: translateY(120px) translateX(-50%);
-  animation: reveal 2s forwards 2s, idle 1s infinite 4s ease-in-out;
+  padding-top: 24vh;
+  font-size: 180px;
+  animation: idle 1s infinite ease-in-out;
 }
 
 @keyframes reveal {
+  from {
+    transform: translateY(120px);
+    opacity: 0;
+  }
   to {
     opacity: 1;
-    transform: translateY(0) translateX(-50%);
+    transform: translateY(0);
   }
 }
 @keyframes idle {
   50% {
-    transform: translate(-50%, 20px);
+    transform: translateY(20px);
   }
 }
 @keyframes fadein {
